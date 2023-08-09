@@ -1,0 +1,38 @@
+Sure, here's an example HTML code for a dropdown box containing "Terms and Conditions" options:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms and Conditions Dropdown</title>
+</head>
+<body>
+  <h1>Welcome to Our Website</h1>
+  <p>Please read and agree to our terms and conditions:</p>
+  
+  <label for="termsDropdown">Select a Terms and Conditions:</label>
+  <select id="termsDropdown">
+    <option value="" selected disabled>Select an option</option>
+    <option value="terms1">Terms and Conditions 1</option>
+    <option value="terms2">Terms and Conditions 2</option>
+    <option value="terms3">Terms and Conditions 3</option>
+  </select>
+  
+  <button id="agreeButton" disabled>Agree</button>
+  
+  <script>
+    const dropdown = document.getElementById("termsDropdown");
+    const agreeButton = document.getElementById("agreeButton");
+    
+    dropdown.addEventListener("change", function() {
+      if (dropdown.value !== "") {
+        agreeButton.removeAttribute("disabled");
+      } else {
+        agreeButton.setAttribute("disabled", "disabled");
+      }
+    });
+  </script>
+</body>
+</html>
